@@ -1,0 +1,25 @@
+.container {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-size: 0.8rem;
+    min-width: 175px;
+    width: 100%;
+}
+
+.label {
+    width: 20%;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 3;
+}
+
+.input {
+    width: 20%;
+    margin-left: 0;
+    padding: 0.3rem;
+    border-radius: 5px;
+}
+
+.icon {
+    width: 10%;
+    margin-left: 0;
+}
