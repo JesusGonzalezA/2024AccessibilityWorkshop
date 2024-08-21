@@ -19,6 +19,8 @@ export const ShoppingCartPopover = ({ anchorEl, open, onClose }: Props) => {
 
   return (
     <Popover
+      role="dialog"
+      aria-labelledby="shopping-cart-title"
       anchorEl={anchorEl}
       anchorOrigin={{
         vertical: "bottom",
@@ -39,7 +41,7 @@ export const ShoppingCartPopover = ({ anchorEl, open, onClose }: Props) => {
           width: "50%",
         }}
       >
-        <Typography component={"h2"} variant="h6">
+        <Typography component={"h2"} variant="h6" id="shopping-cart-title">
           Shopping cart
         </Typography>
         <div style={{ margin: "1rem 0rem" }}>

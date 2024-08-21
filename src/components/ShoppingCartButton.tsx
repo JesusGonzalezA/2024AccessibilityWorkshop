@@ -23,7 +23,11 @@ export const ShoppingCartButton = () => {
   return (
     <>
       <Tooltip title="Cart">
-        <IconButton onClick={openShoppingCart} sx={{ margin: "0.5rem" }}>
+        <IconButton
+          onClick={openShoppingCart}
+          aria-haspopup="dialog"
+          sx={{ margin: "0.5rem" }}
+        >
           <Badge badgeContent={amount} color="warning">
             <ShoppingCartIcon htmlColor="white" />
           </Badge>
