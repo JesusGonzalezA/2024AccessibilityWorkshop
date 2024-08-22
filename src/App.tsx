@@ -4,7 +4,6 @@ import { TopBar } from "./components/TopBar"
 import { Main } from "./components/Main"
 import { ProductList } from "./components/ProductList"
 import { Footer } from "./components/Footer"
-import { products } from "./data/products"
 import { Divider, Typography } from "@mui/material"
 import { SRAlert } from "./components/SRAlert"
 
