@@ -48,7 +48,7 @@ export const CartProductView = forwardRef(
               ref={removeBtnRef}
               onRemove={() => {
                 dispatch(removeFromCart({ id: product.id }))
-                onRemove()
+                onRemove()a
               }}
               onEdit={(amount) => {
                 dispatch(editAmount({ id: product.id, amount }))
