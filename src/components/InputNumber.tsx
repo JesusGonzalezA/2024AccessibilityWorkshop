@@ -1,5 +1,5 @@
 import { IconButton, Stack, Tooltip } from "@mui/material"
-import { AllHTMLAttributes, forwardRef, Ref } from "react"
+import { AllHTMLAttributes, forwardRef } from "react"
 import styles from "./inputNumber.module.css"
 import DeleteIcon from "@mui/icons-material/Delete"
 

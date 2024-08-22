@@ -6,7 +6,7 @@ import {
   shoppingCartSize,
 } from "../state/marketplaceReducer"
 import { CartProductView } from "./CartProductView"
-import { useEffect, useLayoutEffect, useRef, useState } from "react"
+import { useRef } from "react"
 
 type Props = {
   anchorEl: Element | null
