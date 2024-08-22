@@ -40,7 +40,12 @@ export const ProductView = (product: Product) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button onClick={handleAddToCart} size="small" variant="contained">
+        <Button
+          aria-label={`Add ${title} to cart`}
+          onClick={handleAddToCart}
+          size="small"
+          variant="contained"
+        >
           <ShoppingCartIcon />
           Add to cart
         </Button>
