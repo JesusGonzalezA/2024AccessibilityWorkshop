@@ -6,6 +6,7 @@ import {
   shoppingCartSize,
 } from "../state/marketplaceReducer"
 import { CartProductView } from "./CartProductView"
+import { useEffect, useLayoutEffect, useRef, useState } from "react"
 
 type Props = {
   anchorEl: Element | null
@@ -14,6 +15,8 @@ type Props = {
 }
 
 export const ShoppingCartPopover = ({ anchorEl, open, onClose }: Props) => {
+  const removeButtonRefs = useRef<HTMLButtonElement[]>([])
+  const emptyCartRef = useRef<HTMLElement>(null)
   const shoppingCartProducts = useSelector(shoppingCartProucts)
   const isShoppingCartEmpty = useSelector(shoppingCartSize) === 0
 
@@ -46,11 +49,22 @@ export const ShoppingCartPopover = ({ anchorEl, open, onClose }: Props) => {
         </Typography>
         <div style={{ margin: "1rem 0rem" }}>
           {isShoppingCartEmpty ? (
-            <Typography>The cart is empty</Typography>
+            <Typography ref={emptyCartRef}>The cart is empty</Typography>
           ) : (
             <Stack flexDirection={"column"} spacing={2}>
-              {shoppingCartProducts.map((product) => (
-                <CartProductView key={product.id} {...product} />
+              {shoppingCartProducts.map((product, index) => (
+                <CartProductView
+                  key={product.id}
+                  {...product}
+                  onRemove={() => {
+                    if (index === 0 && !isShoppingCartEmpty)
+                      removeButtonRefs.current[1].focus()
+                    else removeButtonRefs.current[index - 1].focus()
+                  }}
+                  ref={(ref) =>
+                    (removeButtonRefs.current[index] = ref as HTMLButtonElement)
+                  }
+                />
               ))}
             </Stack>
           )}

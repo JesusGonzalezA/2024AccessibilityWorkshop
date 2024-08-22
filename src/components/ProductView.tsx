@@ -10,13 +10,16 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart"
 import { Product } from "../domain/Product"
 import { useDispatch } from "react-redux"
 import { addToCart } from "../state/marketplaceReducer"
+import { useAlertSR } from "../hooks/useAlertSR"
 
 export const ProductView = (product: Product) => {
   const { alt, src, title, content } = product
+  const [alert] = useAlertSR()
   const dispatch = useDispatch()
 
   const handleAddToCart = () => {
     dispatch(addToCart({ ...product, amount: 1 }))
+    alert({ type: "polite", message: `${product.title} added to cart` })
   }
 
   return (

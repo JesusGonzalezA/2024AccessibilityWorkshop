@@ -6,6 +6,7 @@ import { ProductList } from "./components/ProductList"
 import { Footer } from "./components/Footer"
 import { products } from "./data/products"
 import { Divider, Typography } from "@mui/material"
+import { SRAlert } from "./components/SRAlert"
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
       </Main>
       <Divider sx={{ margin: "2rem 0rem" }} />
       <Footer style={{ marginBottom: "2rem" }} />
+      <SRAlert />
     </Provider>
   )
 }
