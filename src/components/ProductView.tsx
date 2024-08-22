@@ -49,7 +49,9 @@ export const ProductView = (product: Product) => {
           <ShoppingCartIcon />
           Add to cart
         </Button>
-        <Button size="small">Share</Button>
+        <Button size="small" aria-label={`Share ${title}`}>
+          Share
+        </Button>
       </CardActions>
     </Card>
   )
