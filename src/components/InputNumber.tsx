@@ -51,7 +51,7 @@ export const InputNumber = forwardRef(
           aria-label={inputSRLabel}
           className={styles.label}
         >
-          {inputLabel}
+          The {inputLabel}
         </label>
         <input
           id={inputId}
