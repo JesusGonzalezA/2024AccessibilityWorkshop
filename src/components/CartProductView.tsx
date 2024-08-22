@@ -12,7 +12,7 @@ type Prop = CartProduct & {
 export const CartProductView = forwardRef(
   ({ onRemove, amount, ...product }: Prop, removeBtnRef) => {
     const dispatch = useDispatch()
-    const { alt, src, title } = product
+    const { src, title } = product
 
     return (
       <Card
@@ -56,7 +56,7 @@ export const CartProductView = forwardRef(
             />
           </CardContent>
         </Box>
-        <CardMedia component="img" alt={alt} image={src} sx={{ width: 151 }} />
+        <CardMedia component="img" alt={""} image={src} sx={{ width: 151 }} />
       </Card>
     )
   },
