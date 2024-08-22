@@ -67,7 +67,7 @@ export const InputNumber = forwardRef(
           <IconButton
             onClick={handleOnRemove}
             className={styles.icon}
-            ref={removeBtnRef}
+            ref={removeBtnRef as React.ForwardedRef<HTMLButtonElement>}
           >
             <DeleteIcon />
           </IconButton>
