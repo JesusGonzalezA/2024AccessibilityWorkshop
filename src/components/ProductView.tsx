@@ -13,7 +13,7 @@ import { addToCart } from "../state/marketplaceReducer"
 import { useAlertSR } from "../hooks/useAlertSR"
 
 export const ProductView = (product: Product) => {
-  const { alt, src, title, content } = product
+  const { src, title, content } = product
   const [alert] = useAlertSR()
   const dispatch = useDispatch()
 
@@ -28,8 +28,8 @@ export const ProductView = (product: Product) => {
         component="img"
         height="275"
         sx={{ objectFit: "fit" }}
-        alt={alt}
         image={src}
+        alt={""}
       />
       <CardContent>
         <Typography gutterBottom variant="h6" component="h3">
