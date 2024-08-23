@@ -22,7 +22,7 @@ export const ShoppingCartButton = () => {
 
   return (
     <>
-      <Tooltip title="Cart">
+      <Tooltip title={`Cart with ${amount} products`}>
         <IconButton
           onClick={openShoppingCart}
           aria-haspopup="dialog"
