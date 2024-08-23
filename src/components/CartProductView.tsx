@@ -22,7 +22,7 @@ export const CartProductView = forwardRef(
           height: "10rem",
           justifyContent: "space-between",
         }}
-        role="lisitem"
+        role="listitem"
         aria-labelledby={`title_${product.id}`}
       >
         <Box
