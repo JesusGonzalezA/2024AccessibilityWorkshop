@@ -7,6 +7,7 @@ import {
 } from "../state/marketplaceReducer"
 import { CartProductView } from "./CartProductView"
 import { useRef } from "react"
+import { useAlertSR } from "../hooks/useAlertSR"
 
 type Props = {
   anchorEl: Element | null
@@ -19,6 +20,11 @@ export const ShoppingCartPopover = ({ anchorEl, open, onClose }: Props) => {
   const emptyCartRef = useRef<HTMLElement>(null)
   const shoppingCartProducts = useSelector(shoppingCartProucts)
   const isShoppingCartEmpty = useSelector(shoppingCartSize) === 0
+  const [alert] = useAlertSR()
+
+  const sendAlertOnRemove = (productTitle: string) => {
+    alert({ type: "polite", message: `${productTitle} was removed from cart` })
+  }
 
   return (
     <Popover
@@ -60,6 +66,8 @@ export const ShoppingCartPopover = ({ anchorEl, open, onClose }: Props) => {
                     if (index === 0 && !isShoppingCartEmpty)
                       removeButtonRefs.current[1].focus()
                     else removeButtonRefs.current[index - 1].focus()
+
+                    sendAlertOnRemove(product.title)
                   }}
                   ref={(ref) =>
                     (removeButtonRefs.current[index] = ref as HTMLButtonElement)
