@@ -7,11 +7,10 @@ import { forwardRef } from "react"
 
 type Prop = CartProduct & {
   onRemove: () => void
-  role: string
 }
 
 export const CartProductView = forwardRef(
-  ({ onRemove, amount, role, ...product }: Prop, removeBtnRef) => {
+  ({ onRemove, amount, ...product }: Prop, removeBtnRef) => {
     const dispatch = useDispatch()
     const { src, title } = product
 
@@ -23,7 +22,8 @@ export const CartProductView = forwardRef(
           height: "10rem",
           justifyContent: "space-between",
         }}
-        role={role}
+        role="lisitem"
+        aria-labelledby={`title_${product.id}`}
       >
         <Box
           sx={{
@@ -34,6 +34,7 @@ export const CartProductView = forwardRef(
         >
           <CardContent>
             <Typography
+              id={`title_${product.id}`}
               gutterBottom
               variant="body1"
               component="h3"

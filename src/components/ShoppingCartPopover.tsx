@@ -60,7 +60,7 @@ export const ShoppingCartPopover = ({ anchorEl, open, onClose }: Props) => {
             <Stack flexDirection={"column"} spacing={2} role="list">
               {shoppingCartProducts.map((product, index) => (
                 <CartProductView
-                  role="listitem"
+                  aria-label={product.title}
                   key={product.id}
                   {...product}
                   onRemove={() => {
