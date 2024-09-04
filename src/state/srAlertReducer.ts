@@ -4,30 +4,30 @@ const srAlertSlice = createSlice({
   name: "srAlert",
   initialState: {
     polite: [] as string[],
-    alerts: [] as string[],
+    alert: [] as string[],
   },
   reducers: {
-    queueMessage: (state, action) => {
+    addMessage: (state, action) => {
       if (action.payload.queue === "polite") {
         state.polite = [...state.polite, action.payload.message]
       } else if (action.payload.queue === "alerts") {
-        state.alerts = [...state.alerts, action.payload.message]
+        state.alert = [...state.alert, action.payload.message]
       }
     },
-    unqueueMessage: (state, action) => {
+    removeMessage: (state, action) => {
       if (action.payload.queue === "polite") {
-        state.polite = state.polite.slice(1, -1)
+        state.polite = state.polite.filter((m) => m !== action.payload.message)
       } else if (action.payload.queue === "alerts") {
-        state.alerts = state.alerts.slice(1, -1)
+        state.alert = state.alert.filter((m) => m !== action.payload.message)
       }
     },
   },
   selectors: {
-    lastPoliteMessage: (state) => state.polite.at(-1),
-    lastAlertMessage: (state) => state.alerts.at(-1),
+    allAlertMessages: (state) => state.alert,
+    allPoliteMessages: (state) => state.polite,
   },
 })
 
-export const { lastPoliteMessage, lastAlertMessage } = srAlertSlice.selectors
-export const { queueMessage, unqueueMessage } = srAlertSlice.actions
+export const { allAlertMessages, allPoliteMessages } = srAlertSlice.selectors
+export const { addMessage, removeMessage } = srAlertSlice.actions
 export default srAlertSlice.reducer

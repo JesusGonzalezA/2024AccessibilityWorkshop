@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux"
-import { queueMessage, unqueueMessage } from "../state/srAlertReducer"
+import { addMessage, removeMessage } from "../state/srAlertReducer"
 
 type Props = {
   message: string
@@ -9,9 +9,9 @@ export const useAlertSR = () => {
   const dispatch = useDispatch()
 
   const alert = ({ message, type }: Props) => {
-    dispatch(queueMessage({ message, queue: type }))
+    dispatch(addMessage({ message, queue: type }))
     setTimeout(() => {
-      dispatch(unqueueMessage({ queue: type }))
+      dispatch(removeMessage({ message, queue: type }))
     }, 1000)
   }
 
