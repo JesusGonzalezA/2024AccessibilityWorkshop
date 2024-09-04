@@ -22,8 +22,6 @@ export const CartProductView = forwardRef(
           height: "10rem",
           justifyContent: "space-between",
         }}
-        role="listitem"
-        aria-labelledby={`title_${product.id}`}
       >
         <Box
           sx={{
@@ -46,7 +44,6 @@ export const CartProductView = forwardRef(
               inputId={`${product.id}_input`}
               productTitle={product.title}
               inputLabel="Amount"
-              inputSRLabel={`Amount of ${product.title}`}
               value={amount}
               ref={removeBtnRef}
               onRemove={() => {

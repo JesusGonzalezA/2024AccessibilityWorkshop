@@ -6,7 +6,6 @@ import DeleteIcon from "@mui/icons-material/Delete"
 type Props = AllHTMLAttributes<HTMLInputElement> & {
   productTitle: string
   inputLabel: string
-  inputSRLabel: string
   inputId: string
   onRemove: () => void
   onEdit: (arg: number) => void
@@ -21,7 +20,6 @@ export const InputNumber = forwardRef(
       productTitle,
       inputId,
       inputLabel,
-      inputSRLabel,
       onRemove,
       onEdit,
     }: Props,
@@ -46,13 +44,7 @@ export const InputNumber = forwardRef(
         spacing={2}
         className={styles.container}
       >
-        <label
-          htmlFor={inputId}
-          aria-label={inputSRLabel}
-          className={styles.label}
-        >
-          {inputLabel}
-        </label>
+        <p className={styles.label}>{inputLabel}</p>
         <input
           id={inputId}
           value={value}
