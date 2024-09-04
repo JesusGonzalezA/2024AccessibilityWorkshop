@@ -44,6 +44,7 @@ export const CartProductView = forwardRef(
               inputId={`${product.id}_input`}
               productTitle={product.title}
               inputLabel="Amount"
+              inputSRLabel={`Amount for ${product.title}`}
               value={amount}
               ref={removeBtnRef}
               onRemove={() => {
