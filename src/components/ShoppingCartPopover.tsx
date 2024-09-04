@@ -57,10 +57,9 @@ export const ShoppingCartPopover = ({ anchorEl, open, onClose }: Props) => {
           {isShoppingCartEmpty ? (
             <Typography ref={emptyCartRef}>The cart is empty</Typography>
           ) : (
-            <Stack flexDirection={"column"} spacing={2} role="list">
+            <Stack flexDirection={"column"} spacing={2}>
               {shoppingCartProducts.map((product, index) => (
                 <CartProductView
-                  aria-label={product.title}
                   key={product.id}
                   {...product}
                   onRemove={() => {
