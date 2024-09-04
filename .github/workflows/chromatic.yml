@@ -6,9 +6,15 @@ on:
   push:
     branches:
       - main
+      - WorkShop_0
+      - WorkShop_1
+      - WorkShop_2
   pull_request:
     branches:
       - main
+      - WorkShop_0
+      - WorkShop_1
+      - WorkShop_2
 
 jobs:
   chromatic:
