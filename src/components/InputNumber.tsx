@@ -46,12 +46,9 @@ export const InputNumber = forwardRef(
         spacing={2}
         className={styles.container}
       >
-        <label
-          htmlFor={inputId}
-          aria-label={inputSRLabel}
-          className={styles.label}
-        >
-          {inputLabel}
+        <label htmlFor={inputId} className={styles.label}>
+          <div aria-hidden="true">{inputLabel}</div>
+          <div className={styles.srOnly}>{inputSRLabel}</div>
         </label>
         <input
           id={inputId}
