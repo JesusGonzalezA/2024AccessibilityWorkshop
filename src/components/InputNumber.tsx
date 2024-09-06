@@ -44,7 +44,9 @@ export const InputNumber = forwardRef(
         spacing={2}
         className={styles.container}
       >
-        <p className={styles.label}>{inputLabel}</p>
+        <label htmlFor={inputId} className={styles.label}>
+          {inputLabel}
+        </label>
         <input
           id={inputId}
           value={value}
