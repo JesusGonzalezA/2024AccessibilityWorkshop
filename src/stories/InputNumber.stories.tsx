@@ -13,6 +13,7 @@ export const Primary: StoryObj<typeof InputNumber> = {
     productTitle: "Monstera",
     inputId: "inputId",
     inputLabel: "Amount",
+    inputSRLabel: "Amount for monstera",
     onRemove: () => {},
     onEdit: () => {},
     step: 1,
